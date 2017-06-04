@@ -3,6 +3,7 @@
 #include <vector>
 using namespace std;
 
+//PRINT OUT THE TABLE
 void print(vector <double> v, vector <double> v2, vector <double> v3){
   for (unsigned int i = 0; i < v.size(); i++){
     cout << v[i] << "    " << v2[i] << "     " << v3[i] << endl;
