@@ -70,8 +70,6 @@ int main(){
 
   observed.push_back(combine2);
 
-
-
   //CALCULATING THE TEST STATISTICS
   double tstat = 0;
   for (unsigned int i = 0; i < observed.size(); i++){
