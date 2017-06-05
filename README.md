@@ -6,3 +6,4 @@ Include in this collection are formula to calculate test statistics and degree o
 1. Chi-Square Test for uniform distribution
 2. Chi-Square Test for categorical data
 3. Chi-Square Test for Poisson distribution
+4. Chi-Square Test for normal distribution
