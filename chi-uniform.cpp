@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include <vector>
+#include <fstream>
 using namespace std;
 
 //PRINT OUT THE TABLE
@@ -12,8 +13,12 @@ void print(vector <double> v, vector <double> v2, vector <double> v3){
 
 int main(){
   //CREATE A VECTOR OF OBSERVED FREQUENCY
-  double arr[] = {21, 30, 23, 28, 33, 30, 30, 25, 22, 28};
-  vector <double> observed(arr, arr+10);
+  vector <double> observed;
+  ifstream is("input.txt");
+  double x;
+  while (is >> x){
+    observed.push_back(x);
+  }
 
   //CREATE VECTOR OF EXPECTED FREQUENCY
   vector <double> expected;

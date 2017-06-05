@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
+#include <iomanip>
 using namespace std;
 
 //RETURN FACTORIAL VERSION OF N
@@ -11,13 +12,10 @@ int f(int n){
 int main(){
 
   //CHANGE VALUE HERE
-  double arr1[] = {0,1,2,3,4};
-  double arr2[] = {59,31,8,1,1};
-  double noLessThan = 5;
-
-  //INITIAILZE VECTOR
-  vector <double> no(arr1, arr1+5);
-  vector <double> observed(arr2, arr2+5);
+  double arr1[] = {0,1,2,3,4,5,6,7};
+  double arr2[] = {4,	20,	42,	17,	6,	6,	3,	2};
+  vector <double> no(arr1, arr1+8);
+  vector <double> observed(arr2, arr2+8);
   vector <double> expected;
 
 
@@ -47,33 +45,17 @@ int main(){
   expected.push_back(remain);
 
 
-  //COMBINING THE PROBABILITY OF CATEGORY WITH LESS THAN X% (e.g 5%)
-  double combine = 0;
-  double j = expected.size()-1;
-  while (combine < noLessThan){
-    combine += expected[j];
-    expected.pop_back();
-    j--;
-  }
-  expected.push_back(combine);
-
-  //COMBINING THE VALUE OF THE CATEGORY ITSELF
-  int combine2 = 0;
-  unsigned int k = 0;
-  unsigned int l = observed.size() - 1;
-  while (k < expected.size()){
-      combine2 += observed[l];
-      l--;
-      k++;
-      observed.pop_back();
-  }
-
-  observed.push_back(combine2);
-
   //CALCULATING THE TEST STATISTICS
+  vector <double> chi;
   double tstat = 0;
   for (unsigned int i = 0; i < observed.size(); i++){
+    chi.push_back(pow(observed[i]-expected[i],2)/expected[i]);
     tstat += (pow(observed[i]-expected[i],2)/expected[i]);
+  }
+
+  //DISPLAY STUFF
+  for (unsigned int i = 0; i < observed.size(); i++){
+    cout << setw(10) << fixed << observed[i] << "   |   " << setw(10) << expected[i] <<  "   |   " << chi[i] << endl;
   }
   cout << "Test statistics: " << tstat << endl;
   cout << "Degree of freedom: " << expected.size() - 2 << endl;
