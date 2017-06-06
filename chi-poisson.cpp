@@ -12,10 +12,10 @@ int f(int n){
 int main(){
 
   //CHANGE VALUE HERE
-  double arr1[] = {0,1,2,3,4,5,6,7};
-  double arr2[] = {4,	20,	42,	17,	6,	6,	3,	2};
-  vector <double> no(arr1, arr1+8);
-  vector <double> observed(arr2, arr2+8);
+  double arr1[] = {0,1,2,3};
+  double arr2[] = {0, 3, 3, 2, 1, 0, 1, 0, 0, 1, 1, 1, 2, 1, 0, 1, 0, 1, 2, 1, 1, 2, 1, 0, 1, 2, 0, 1, 0, 1};
+  vector <double> no(arr1, arr1+30);
+  vector <double> observed(arr2, arr2+30);
   vector <double> expected;
 
 
