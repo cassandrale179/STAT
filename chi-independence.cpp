@@ -56,22 +56,22 @@ int main(){
   }
 
 
-  //FINDING THE CHI SQUARE TEST STATISTICS
-  double tstat = 0;
-  for (unsigned int i = 0; i < expected.size(); i++){
-    cout << expected[i] << endl;
+  //CREATE OBSERVED FREQUENCY FROM DATA
+  vector <double> observed;
+  for (int k = 0; k < row; k++){
+    for (int l = 0; l < column; l++){
+      observed.push_back(a[k][l]);
+    }
   }
 
+  //CALCAULTE CHI SQUARE STATISTICS
+  double tstat = 0;
+  for (unsigned int i = 0; i < observed.size(); i++){
+    tstat += pow(observed[i] - expected[i],2) / expected[i];
+  }
 
-
-
-
-
+  //DISPLAY STUFF ON THE SCREEN
+  cout << "Test statistics: " << tstat << endl;
+  cout << "Degree of freedom: " << (row-1)*(column-1) << endl;
 
 }
-
-/*
-
-
-
-*/

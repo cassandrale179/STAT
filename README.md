@@ -4,6 +4,6 @@ A collection of C++ script to calculate Chi Square &amp; Nonparametric Tests. Th
 ## Collections:
 Include in this collection are formula to calculate test statistics and degree of freedom of:
 1. Chi-Square Test for uniform distribution
-2. Chi-Square Test for categorical data
+2. Chi-Square Test for categorical (independence test) data
 3. Chi-Square Test for Poisson distribution
 4. Chi-Square Test for normal distribution
