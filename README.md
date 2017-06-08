@@ -7,3 +7,4 @@ Include in this collection are formula to calculate test statistics and degree o
 2. Chi-Square Test for categorical (independence test) data
 3. Chi-Square Test for Poisson distribution
 4. Chi-Square Test for normal distribution
+5. Nonparametric Test for One Sample Run Test
