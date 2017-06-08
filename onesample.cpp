@@ -6,6 +6,7 @@
 using namespace std;
 
 /*
+  THIS IS THE CODE TO CALCUALTE THE TEST STATISTICS OF ONE-SAMPLE RUN TEST TO DETERMINE IF A GIVEN SEQUENCEFOLLOW BINARY PATTERN.
 
 */
 
@@ -39,7 +40,10 @@ double NormalCDFInverse(double p){
 
 int main(){
 
-  string arr[] = {"CCICCCCCIICICCCIIIICCCCICIIICC"};
+  //CHANGE VALUE HERE (PLEASE DO NOT HAVE SPACE BETWEEN EVENTS)
+  string arr[] = {"HMMHHMHMMHHHHHMMHHMMHMHHHMHHHHMMMHH"};
+  //string arr[] = {"CCICCCCCIICICCCIIIICCCCICIIICC"};
+  //string arr[] = {"++---+++++++----++-+-+-+----++++-++++-+++-+-+-+++------++++--"};
 
   //ASKING USER FOR SYMBOL USED IN BINARY EVENTS
   char s1; char s2;
@@ -69,18 +73,12 @@ int main(){
 
 
   //COUNTING NUMBER OF RUNS
-  double run1 = 0;
-  double run2 = 0;
-  for (unsigned int i = 0; i < arr[0].length(); i++){
-    if (arr[0][i] == s1 && arr[0][i+1] == s2) run1++;
+  double r = 1;
+  for (unsigned int i = 0; i < arr[0].length()-1; i++){
+    if ((arr[0][i] == s1 && arr[0][i+1] == s2) || (arr[0][i] == s2 && arr[0][i+1] == s1)) r++;
   }
-  for (unsigned int i = 0; i < arr[0].length(); i++){
-    if (arr[0][i] == s1 && arr[0][i+1] == s2) run2++;
-  }
-  if (arr[0][arr[0].length()-1] == s1) run1++;
-  else{run2++;}
+  cout << "Total run: " << r << endl;
 
-  double r = run1 + run2;
 
   //CALCULATING THE ZCALC
   double zcalc = (r - mu) / s;
